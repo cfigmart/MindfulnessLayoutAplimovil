@@ -3,4 +3,12 @@
     <string name="app_name">MindfulnessLayout</string>
     <string name="search_text">Ingrese el texto a buscar</string>
     <string name="inversions_txt">Inversiones</string>
+    <string name="quick_yoga_txt">Yoga</string>
+    <string name="stretching_txt">Flexibilidad</string>
+    <string name="prenatal_yoga_txt">Yoga prenatal</string>
+    <string name="short_mantras_txt">Mantras cortos</string>
+    <string name="nature_meditations">Meditaciones con la naturaleza</string>
+    <string name="stress_anx_text">Estrés y ansiedad</string>
+    <string name="self_massage_txt">Auto Masaje</string>
+    <string name="overwhelmed_txt">Angustia</string>
 </resources>

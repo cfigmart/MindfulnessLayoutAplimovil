@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -21,7 +23,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -76,19 +77,21 @@ fun SearchBarPreview(){
 
 @Composable
 fun AlignYourBodyElement(
+    @DrawableRes drawableId: Int,
+    @StringRes textId: Int,
     modifier: Modifier = Modifier
 ){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
 
         modifier = modifier) {
-        Image(painter = painterResource(R.drawable.ab1_inversions),
-            contentDescription = stringResource(R.string.inversions_txt),
+        Image(painter = painterResource(drawableId),
+            contentDescription = stringResource(textId),
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(88.dp)
                 .clip(CircleShape))
-        Text(text = stringResource(R.string.inversions_txt))
+        Text(text = stringResource(textId))
     }
 }
 
@@ -96,6 +99,9 @@ fun AlignYourBodyElement(
 @Composable
 fun AlignYourBodyElementPreview() {
     MindfulnessLayoutTheme {
-        AlignYourBodyElement()
+        AlignYourBodyElement(
+            drawableId = R.drawable.ab3_stretching,
+            textId = R.string.stretching_txt,
+            )
     }
 }

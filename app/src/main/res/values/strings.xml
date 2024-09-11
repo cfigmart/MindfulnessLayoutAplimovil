@@ -2,4 +2,14 @@
     <string name="app_name">MindfulnessLayout</string>
     <string name="search_text">Insert your search text here</string>
     <string name="inversions_txt">Inversions</string>
+    <string name="quick_yoga_txt">Quick Yoga</string>
+    <string name="stretching_txt">Stretching</string>
+    <string name="tabata_txt" translatable="false">Tabata</string>
+    <string name="hiit_txt" translatable="false">Hiit</string>
+    <string name="prenatal_yoga_txt">Pre Natal Yoga</string>
+    <string name="short_mantras_txt">Short Mantras</string>
+    <string name="nature_meditations">Nature Meditations</string>
+    <string name="stress_anx_text">Stress and Anxiety</string>
+    <string name="self_massage_txt">Self Massage</string>
+    <string name="overwhelmed_txt">Overwhelmed</string>
 </resources>
