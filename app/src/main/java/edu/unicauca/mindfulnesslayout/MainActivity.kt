@@ -7,7 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
@@ -15,6 +17,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
@@ -41,7 +45,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MindfulnessLayoutTheme {
-
+                HomeScreen()
             }
         }
     }
@@ -157,3 +161,63 @@ fun FavoriteCollectionCardPreview() {
         )
     }
 }
+
+@Composable
+fun AlignYourBodyRow(
+    modifier: Modifier = Modifier
+) {
+    LazyRow(
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        contentPadding = PaddingValues(horizontal = 16.dp),
+        modifier = modifier
+    ) {
+
+        items(alignYourBodyData) { item ->
+            AlignYourBodyElement(item.drawable, item.text)
+        }
+    }
+}
+
+@Preview(showBackground = true, backgroundColor = 0xFFF5F0EE)
+@Composable
+fun AlignYourBodyRowPreview() {
+    MindfulnessLayoutTheme {
+        AlignYourBodyRow()
+    }
+}
+
+
+@Composable
+fun HomeScreen(
+    modifier: Modifier = Modifier
+){
+    Surface {
+        Column {
+            SearchBar()
+            AlignYourBodyRow()
+        }
+    }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun HomeScreenPreview(){
+    MindfulnessLayoutTheme {
+        HomeScreen()
+    }
+}
+
+
+//Create a map named alignYourBodyData to store the data
+private val alignYourBodyData = listOf(
+    R.drawable.ab1_inversions to R.string.inversions_txt,
+    R.drawable.ab2_quick_yoga to R.string.quick_yoga_txt,
+    R.drawable.ab3_stretching to R.string.stretching_txt,
+    R.drawable.ab4_tabata to R.string.tabata_txt,
+    R.drawable.ab5_hiit to R.string.hiit_txt
+).map { DrawableResourcePair(it.first, it.second)  }
+
+private data class DrawableResourcePair(
+    @DrawableRes val drawable: Int,
+    @StringRes val text: Int
+)
