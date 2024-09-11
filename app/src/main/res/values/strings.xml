@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MindfulnessLayout</string>
+    <string name="search_text">Insert your search text here</string>
+    <string name="inversions_txt">Inversions</string>
+</resources>

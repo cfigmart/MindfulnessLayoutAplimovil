@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MindfulnessLayout</string>
+    <string name="search_text">Ingrese el texto a buscar</string>
+    <string name="inversions_txt">Inversiones</string>
+</resources>
